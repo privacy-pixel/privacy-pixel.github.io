@@ -1,0 +1,338 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy Pixel Datenschutz</title>
+<meta name="description" content="Datenschutzerklärung der Android-App Privacy Pixel / Privacy Policy of the Android app Privacy Pixel">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700&family=Source+Sans+3:ital,wght@0,400;0,600;1,400&family=JetBrains+Mono:wght@500&display=swap">
+<style>
+  /* Layout: eine ruhige Lesespalte, oben App-Kopf mit Sprachwahl, darunter DE- und EN-Fassung nacheinander */
+  :root {
+    --bg: #F4F7FB;
+    --surface: #FFFFFF;
+    --ink: #0E1B2E;
+    --muted: #4C5E78;
+    --line: #D6DFEA;
+    --accent: #1C7FD6;
+    --accent-soft: #E3F0FC;
+    --mark: #FFF1C2;
+    --mark-ink: #5A4300;
+    --font-display: "Sora", "Segoe UI", system-ui, sans-serif;
+    --font-body: "Source Sans 3", "Segoe UI", system-ui, sans-serif;
+    --font-mono: "JetBrains Mono", ui-monospace, "Cascadia Mono", Consolas, monospace;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #0A1729; --surface: #12284A; --ink: #F2F6FC; --muted: #A9BCD6; --line: #244A74;
+      --accent: #3CC3F5; --accent-soft: #14365C; --mark: #4A3B0B; --mark-ink: #FFE7A3;
+      color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #0A1729; --surface: #12284A; --ink: #F2F6FC; --muted: #A9BCD6; --line: #244A74;
+    --accent: #3CC3F5; --accent-soft: #14365C; --mark: #4A3B0B; --mark-ink: #FFE7A3;
+    color-scheme: dark;
+  }
+
+  html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--font-body);
+    font-size: 17px;
+    line-height: 1.6;
+    padding-left: max(16px, env(safe-area-inset-left, 0px));
+    padding-right: max(16px, env(safe-area-inset-right, 0px));
+    padding-block: 32px 64px;
+  }
+
+  .wrap { max-width: 44rem; margin: 0 auto; display: grid; gap: 40px; }
+
+  header.app {
+    display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px;
+    padding-bottom: 24px; border-bottom: 1px solid var(--line);
+  }
+  .brand { display: flex; align-items: center; gap: 14px; min-width: 0; }
+  .glyph {
+    width: 48px; height: 48px; border-radius: 12px; flex: none;
+    background: #0E1F3A; display: grid; place-items: center;
+  }
+  .brand-name { font-family: var(--font-display); font-weight: 700; font-size: 1.25rem; line-height: 1.2; }
+  .brand-sub { color: var(--muted); font-size: 0.95rem; }
+
+  nav.lang { display: flex; gap: 4px; padding: 4px; border: 1px solid var(--line); border-radius: 10px; background: var(--surface); }
+  nav.lang a {
+    color: var(--ink); text-decoration: none; font-weight: 600; font-size: 0.95rem;
+    padding: 6px 14px; border-radius: 7px;
+  }
+  nav.lang a:hover, nav.lang a:focus-visible { background: var(--accent-soft); color: var(--accent); outline: none; }
+
+  article { display: grid; gap: 28px; scroll-margin-top: 24px; }
+  article + article { padding-top: 40px; border-top: 1px solid var(--line); }
+
+  h1 {
+    font-family: var(--font-display); font-weight: 700; font-size: clamp(1.7rem, 4vw, 2.2rem);
+    line-height: 1.2; margin: 0; text-wrap: balance; letter-spacing: -0.01em;
+  }
+  .meta { color: var(--muted); margin: 6px 0 0; font-size: 0.95rem; }
+
+  .summary {
+    background: var(--accent-soft); border-radius: 14px; padding: 20px 22px;
+    display: grid; gap: 10px;
+  }
+  .summary p { margin: 0; font-weight: 600; }
+  .summary ul { margin: 0; padding-left: 1.2rem; display: grid; gap: 4px; }
+
+  section { display: grid; gap: 10px; }
+  h2 {
+    font-family: var(--font-display); font-weight: 600; font-size: 1.15rem; line-height: 1.3;
+    margin: 0; text-wrap: balance;
+  }
+  p { margin: 0; max-width: 65ch; }
+  ul { margin: 0; padding-left: 1.2rem; display: grid; gap: 6px; max-width: 65ch; }
+
+  code {
+    font-family: var(--font-mono); font-size: 0.82em; background: var(--surface);
+    border: 1px solid var(--line); border-radius: 5px; padding: 1px 5px; white-space: nowrap;
+  }
+
+  .table-wrap { overflow-x: auto; border: 1px solid var(--line); border-radius: 12px; background: var(--surface); }
+  table { width: 100%; border-collapse: collapse; font-size: 0.95rem; min-width: 520px; }
+  th, td { text-align: left; vertical-align: top; padding: 10px 14px; border-bottom: 1px solid var(--line); }
+  tr:last-child td { border-bottom: none; }
+  th { font-size: 0.78rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); font-weight: 600; }
+
+  .fill { background: var(--mark); color: var(--mark-ink); padding: 1px 6px; border-radius: 4px; font-weight: 600; }
+
+  a { color: var(--accent); }
+  a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 3px; }
+
+  footer { color: var(--muted); font-size: 0.9rem; border-top: 1px solid var(--line); padding-top: 20px; }
+</style>
+</head>
+<body>
+
+
+<div class="wrap">
+  <header class="app">
+    <div class="brand">
+      <div class="glyph" aria-hidden="true">
+        <svg width="30" height="30" viewBox="0 0 30 30">
+          <rect x="3" y="6" width="19" height="15" rx="3" fill="#3CA0F0"/>
+          <circle cx="8.5" cy="11" r="2.2" fill="#FFFFFF"/>
+          <path d="M4 20 L10 13.5 L15 18 L18 15.5 L21 18.5 L21 20 Z" fill="#1A4F9C"/>
+          <rect x="15" y="6" width="3.5" height="3.5" fill="#7FB8EE"/>
+          <rect x="18.5" y="9.5" width="3.5" height="3.5" fill="#2A63B8"/>
+          <circle cx="21.5" cy="21" r="6.5" fill="#0E1F3A" stroke="#3CC3F5" stroke-width="1.6"/>
+          <rect x="18.6" y="20" width="5.8" height="4.6" rx="1" fill="#FFFFFF"/>
+          <path d="M19.8 20 v-1.4 a1.7 1.7 0 0 1 3.4 0 V20" fill="none" stroke="#FFFFFF" stroke-width="1.2"/>
+        </svg>
+      </div>
+      <div>
+        <div class="brand-name">Privacy Pixel</div>
+        <div class="brand-sub">Android-App · <span lang="en">Android app</span></div>
+      </div>
+    </div>
+    <nav class="lang" aria-label="Sprache / Language">
+      <a href="#de" hreflang="de">Deutsch</a>
+      <a href="#en" hreflang="en">English</a>
+    </nav>
+  </header>
+
+  <!-- ====================== DEUTSCH ====================== -->
+  <article id="de" lang="de">
+    <div>
+      <h1>Datenschutzerklärung</h1>
+      <p class="meta">Gültig ab 24. Oktober 2026 · gilt für die App „Privacy Pixel“ (<code>com.privacypixel.app</code>)</p>
+    </div>
+
+    <div class="summary">
+      <p>Kurz gesagt: Privacy Pixel erhebt keine personenbezogenen Daten.</p>
+      <ul>
+        <li>Die App hat keinen Internetzugriff und kann keine Daten senden.</li>
+        <li>Alle Fotos werden nur auf deinem Gerät verarbeitet.</li>
+        <li>Es gibt keine Werbung, keine Analyse und kein Tracking.</li>
+        <li>Deine Originalfotos werden nie verändert.</li>
+      </ul>
+    </div>
+
+    <section>
+      <h2>1. Verantwortlicher</h2>
+      <p>Verantwortlich für die App und diese Datenschutzerklärung ist:</p>
+      <p>Ertun Tekbas<br>
+         Fröbelstraße 38<br>
+         50823 Köln<br>
+         Deutschland<br>
+         E-Mail: ertun78@gmail.com</p>
+    </section>
+
+    <section>
+      <h2>2. Welche Daten verarbeitet die App?</h2>
+      <p>Privacy Pixel verarbeitet ausschließlich Daten, die bereits auf deinem Gerät liegen, und speichert Ergebnisse nur im privaten Speicher der App. Der Entwickler erhält keine dieser Daten.</p>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Daten</th><th>Zweck</th><th>Speicherort</th></tr></thead>
+          <tbody>
+            <tr><td>Fotos aus deiner Galerie</td><td>Anzeige in der App-Galerie und Verpixeln</td><td>Werden nur gelesen, die Originale werden nie verändert</td></tr>
+            <tr><td>Verpixelte Kopien</td><td>Anzeige gespeicherter Verpixelungen</td><td>Privater App-Speicher auf dem Gerät</td></tr>
+            <tr><td>Verschlüsselte Sicherungen geschützter Bilder</td><td>PIN-Schutz einzelner Bilder</td><td>Privater App-Speicher, verschlüsselt mit AES-256-GCM</td></tr>
+            <tr><td>Einstellungen pro Bild (Stufe, Schutz, Papierkorb-Datum)</td><td>Funktion der Bereiche Verpixelt, Geschützt und Papierkorb</td><td>Privater App-Speicher auf dem Gerät</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>Deine PIN wird nicht gespeichert. Sie wird nur im Moment der Eingabe benutzt, um ein Bild zu ver- oder entschlüsseln. Ohne PIN kann niemand die geschützten Bilder öffnen, auch der Entwickler nicht.</p>
+    </section>
+
+    <section>
+      <h2>3. Berechtigungen</h2>
+      <ul>
+        <li><strong>Zugriff auf Fotos</strong> (<code>READ_MEDIA_IMAGES</code>, auf älteren Geräten <code>READ_EXTERNAL_STORAGE</code>): Damit zeigt Privacy Pixel deine Fotos in der eigenen Galerie an. Die Fotos verlassen dabei dein Gerät nicht.</li>
+        <li>Die App fordert <strong>keine Internet-Berechtigung</strong> an. Sie kann technisch keine Daten an den Entwickler oder Dritte übertragen.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>4. Weitergabe an Dritte</h2>
+      <p>Privacy Pixel gibt keine Daten an Dritte weiter. Es sind keine Werbe-, Analyse- oder Tracking-Dienste eingebunden.</p>
+      <p>Wenn du selbst ein Bild über „Teilen“ versendest, öffnet Android den Teilen-Dialog. Das Bild geht dann an die App, die du auswählst, zum Beispiel einen Messenger. Für die weitere Verarbeitung gilt die Datenschutzerklärung dieser App. Die dafür nötige temporäre Kopie im Zwischenspeicher der App wird automatisch wieder gelöscht.</p>
+    </section>
+
+    <section>
+      <h2>5. Google Play</h2>
+      <p>Wenn du Privacy Pixel über Google Play herunterlädst, verarbeitet Google dabei Daten wie dein Google-Konto und Informationen zum Download. Darauf hat der Entwickler keinen Einfluss. Es gilt die <a href="https://policies.google.com/privacy?hl=de" target="_blank" rel="noopener">Datenschutzerklärung von Google</a>.</p>
+    </section>
+
+    <section>
+      <h2>6. Speicherdauer und Löschung</h2>
+      <ul>
+        <li>Bilder im Papierkorb werden nach 30 Tagen automatisch aus der App entfernt. Du kannst sie auch vorher endgültig löschen.</li>
+        <li>Wenn du die App deinstallierst oder ihre Daten in den Android-Einstellungen löschst, werden alle app-internen Daten entfernt. Deine Originalfotos in der Galerie bleiben erhalten.</li>
+        <li>Die App erstellt keine Cloud-Sicherung ihrer Daten.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>7. Sicherheit</h2>
+      <p>Geschützte Bilder werden mit AES-256-GCM verschlüsselt, der Schlüssel wird mit PBKDF2-HMAC-SHA256 aus deiner PIN abgeleitet. Bildschirmfotos sind innerhalb der App gesperrt. Gegen das Abfotografieren des Bildschirms mit einem anderen Gerät kann keine App schützen.</p>
+    </section>
+
+    <section>
+      <h2>8. Kinder</h2>
+      <p>Privacy Pixel richtet sich nicht gezielt an Kinder. Da die App keine personenbezogenen Daten erhebt, werden auch von Kindern keine Daten erhoben.</p>
+    </section>
+
+    <section>
+      <h2>9. Deine Rechte</h2>
+      <p>Nach der Datenschutz-Grundverordnung (DSGVO) hast du das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung, Datenübertragbarkeit und Widerspruch. Da der Entwickler keine Daten von dir erhält, liegen ihm in der Regel keine Daten vor, über die er Auskunft geben könnte. Bei Fragen kannst du dich jederzeit an die oben genannte E-Mail-Adresse wenden. Außerdem hast du das Recht, dich bei einer Datenschutz-Aufsichtsbehörde zu beschweren.</p>
+    </section>
+
+    <section>
+      <h2>10. Änderungen</h2>
+      <p>Diese Datenschutzerklärung kann angepasst werden, wenn sich die App oder rechtliche Vorgaben ändern. Es gilt die jeweils hier veröffentlichte Fassung.</p>
+    </section>
+  </article>
+
+  <!-- ====================== ENGLISH ====================== -->
+  <article id="en" lang="en">
+    <div>
+      <h1>Privacy Policy</h1>
+      <p class="meta">Effective October 24, 2026 · applies to the app “Privacy Pixel” (<code>com.privacypixel.app</code>)</p>
+    </div>
+
+    <div class="summary">
+      <p>In short: Privacy Pixel does not collect any personal data.</p>
+      <ul>
+        <li>The app has no internet access and cannot send data.</li>
+        <li>All photos are processed only on your device.</li>
+        <li>There are no ads, no analytics and no tracking.</li>
+        <li>Your original photos are never modified.</li>
+      </ul>
+    </div>
+
+    <section>
+      <h2>1. Controller</h2>
+      <p>The app and this privacy policy are the responsibility of:</p>
+      <p>Ertun Tekbas<br>
+         Fröbelstraße 38<br>
+         50823 Köln<br>
+         Germany<br>
+         Email: ertun78@gmail.com</p>
+    </section>
+
+    <section>
+      <h2>2. What data does the app process?</h2>
+      <p>Privacy Pixel only processes data that is already on your device, and stores results only in the app’s private storage. The developer does not receive any of this data.</p>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Data</th><th>Purpose</th><th>Where it is stored</th></tr></thead>
+          <tbody>
+            <tr><td>Photos in your gallery</td><td>Shown in the app’s gallery and pixelated</td><td>Only read, the originals are never modified</td></tr>
+            <tr><td>Pixelated copies</td><td>Showing saved pixelations</td><td>Private app storage on the device</td></tr>
+            <tr><td>Encrypted backups of protected images</td><td>PIN protection of individual images</td><td>Private app storage, encrypted with AES-256-GCM</td></tr>
+            <tr><td>Per-image settings (level, protection, trash date)</td><td>The Pixelated, Protected and Trash sections</td><td>Private app storage on the device</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>Your PIN is never stored. It is only used at the moment you enter it, to encrypt or decrypt an image. Without the PIN nobody can open protected images, including the developer.</p>
+    </section>
+
+    <section>
+      <h2>3. Permissions</h2>
+      <ul>
+        <li><strong>Access to photos</strong> (<code>READ_MEDIA_IMAGES</code>, on older devices <code>READ_EXTERNAL_STORAGE</code>): lets Privacy Pixel show your photos in its own gallery. The photos never leave your device.</li>
+        <li>The app does <strong>not request internet permission</strong>. It is technically unable to send data to the developer or to third parties.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>4. Sharing with third parties</h2>
+      <p>Privacy Pixel does not share data with third parties. No advertising, analytics or tracking services are included.</p>
+      <p>When you share an image yourself using “Share”, Android opens its share sheet and the image goes to the app you choose, for example a messenger. That app’s privacy policy then applies. The temporary copy this requires in the app’s cache is deleted automatically.</p>
+    </section>
+
+    <section>
+      <h2>5. Google Play</h2>
+      <p>When you download Privacy Pixel from Google Play, Google processes data such as your Google account and download information. The developer has no influence on this. <a href="https://policies.google.com/privacy?hl=en" target="_blank" rel="noopener">Google’s privacy policy</a> applies.</p>
+    </section>
+
+    <section>
+      <h2>6. Retention and deletion</h2>
+      <ul>
+        <li>Images in the trash are removed from the app automatically after 30 days. You can also delete them permanently earlier.</li>
+        <li>When you uninstall the app or clear its data in the Android settings, all app data is removed. Your original photos in the gallery are kept.</li>
+        <li>The app does not create cloud backups of its data.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>7. Security</h2>
+      <p>Protected images are encrypted with AES-256-GCM, with the key derived from your PIN using PBKDF2-HMAC-SHA256. Screenshots are blocked inside the app. No app can prevent someone from photographing the screen with another device.</p>
+    </section>
+
+    <section>
+      <h2>8. Children</h2>
+      <p>Privacy Pixel is not specifically directed at children. Because the app does not collect personal data, no data is collected from children either.</p>
+    </section>
+
+    <section>
+      <h2>9. Your rights</h2>
+      <p>Under the General Data Protection Regulation (GDPR) you have the right of access, rectification, erasure, restriction of processing, data portability and objection. Because the developer does not receive any of your data, there is usually no data the developer could provide. If you have questions, contact the email address above at any time. You also have the right to lodge a complaint with a data protection supervisory authority.</p>
+    </section>
+
+    <section>
+      <h2>10. Changes</h2>
+      <p>This privacy policy may be updated if the app or legal requirements change. The version published here applies.</p>
+    </section>
+  </article>
+
+  <footer>Privacy Pixel · <span lang="en">Privacy Policy</span> / Datenschutzerklärung · 24.10.2026</footer>
+</div>
+
+</body>
+</html>
