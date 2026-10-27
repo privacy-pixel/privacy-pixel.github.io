@@ -125,5 +125,16 @@ footer.site nav { display: flex; gap: 18px; flex-wrap: wrap; }
 @media (max-width: 760px) {
   .hero { padding-block: 40px 52px; }
   .hero .container { grid-template-columns: 1fr; }
-  .hero-logo { grid-row: 1; width: 160px; justify-self: start; }
+  .hero-logo { grid-row: 1; width: 150px; justify-self: center; }
+  /* Handy: alles mittig */
+  .hero .container { text-align: center; gap: 24px; }
+  .hero p.lead { margin-left: auto; margin-right: auto; }
+  .hero .cta { justify-content: center; }
+  .cta-col { align-items: center; }
+  .cta-col .price { padding-left: 0; }
+}
+@media (max-width: 480px) {
+  /* Navigation in einer Zeile */
+  .topbar-home nav { gap: 0; }
+  .topbar nav a { font-size: 0.88rem; padding: 6px 9px; }
 }
